@@ -85,7 +85,7 @@ footer button {
 }
 
 footer button:hover {
-  border-bottom: 2px solid var(--dark-green);
+  color: var(--dark-green);
 }
 
 .turn-x {
