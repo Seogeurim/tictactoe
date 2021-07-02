@@ -27,12 +27,16 @@ function handleClick(e) {
   board[parseInt(idx / 10)][idx % 10] = turn_num;
 
   if (checkWin(parseInt(idx / 10), idx % 10)) {
-    alert(`${turn} WIN !!`);
-    addScore();
-    resetGame();
+    setTimeout(function () {
+      alert(`${turn} WIN !!`);
+      addScore();
+      resetGame();
+    }, 100);
   } else if (turn_cnt == 9) {
-    alert('Tie Game !!');
-    resetGame();
+    setTimeout(function () {
+      alert('Tie Game !!');
+      resetGame();
+    }, 100);
   } else {
     changeTurn();
   }
@@ -66,19 +70,23 @@ function addScore() {
 }
 
 function changeTurn() {
+  document.querySelector(`div.light-${turn.toLowerCase()}`).style.display = 'none';
   turn = turn == 'X' ? 'O' : 'X';
   turn_num = 1 - turn_num;
+  document.querySelector(`div.light-${turn.toLowerCase()}`).style.display = 'block';
 }
 
 function newGame() {
+  turn = 'X';
+  turn_num = 0;
   score = [0, 0];
   document.querySelectorAll('section#score span').forEach((e) => (e.innerHTML = 0));
+  document.querySelector('div.light-x').style.display = 'block';
+  document.querySelector('div.light-o').style.display = 'none';
   resetGame();
 }
 
 function resetGame() {
-  turn = 'X';
-  turn_num = 0;
   turn_cnt = 0;
   board = [];
   for (let i = 0; i < 3; i++) {
