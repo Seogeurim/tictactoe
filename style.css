@@ -1,0 +1,97 @@
+:root {
+  --white: rgb(243, 243, 243);
+  --green: rgb(130, 165, 169);
+  --dark-green: rgb(60, 105, 110);
+  --yellow: rgb(217, 193, 157);
+}
+
+html,
+body {
+  background-color: var(--green);
+  font-family: sans-serif;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+  width: 100%;
+}
+
+header #title {
+  color: var(--white);
+  font-size: 40px;
+  font-weight: 500;
+  text-align: center;
+  padding-bottom: 10px;
+  width: 60%;
+  border-bottom: 2px dotted var(--yellow);
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+section#score {
+  margin: 25px 0;
+  color: var(--white);
+  font-size: 60px;
+  font-weight: 500;
+}
+
+section#game table {
+  border-collapse: collapse;
+}
+
+section#game table td {
+  cursor: pointer;
+  border: 3px solid var(--yellow);
+  width: 100px;
+  height: 100px;
+  text-align: center;
+  font-weight: 700;
+  font-size: 80px;
+  vertical-align: bottom;
+}
+
+footer {
+  width: 430px;
+  margin: 40px auto;
+  display: flex;
+  justify-content: space-around;
+}
+
+footer button {
+  cursor: pointer;
+  background: none;
+  border: none;
+  color: var(--white);
+  font-size: 18px;
+  font-weight: 600;
+  padding: 5px 10px;
+}
+
+footer button:hover {
+  border-bottom: 2px solid var(--dark-green);
+}
+
+.turn-x {
+  color: var(--white);
+}
+
+.turn-o {
+  color: var(--dark-green);
+}
